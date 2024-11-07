@@ -10,7 +10,7 @@ enum class SceneType
 enum class ObjectType
 {
 	None,
-	Alley,
+	Unit,
 	Enemy,
 };
 

@@ -35,6 +35,11 @@ void InputManager::Update()
 		}
 	}
 
+	if (GET_SINGLE(InputManager)->GetButtonDown(KeyType::W))
+	{
+		//
+	}
+
 	// 마우스
 	::GetCursorPos(&_mousePos); // 커서의 좌표를 알아옴.
 	::ScreenToClient(_hwnd, &_mousePos); // 이게 없으면 창(클라)에 대한 좌표가 아니라 모니터의 좌표가 나온다. (0, 0) 이 창 왼쪽 위가 아니라 모니터 왼쪽 위임.
