@@ -4,7 +4,7 @@
 
 Object::Object(ObjectType objectType) : _objectType(objectType)
 {
-
+    _objectType = objectType;
 }
 
 Object::~Object()
