@@ -4,6 +4,7 @@ class Object;
 class UI;
 class Actor;
 class Creature;
+class Bullet;
 
 class Scene
 {
@@ -22,13 +23,18 @@ public:
 
 	vector<Object*>& GetObjects() {	return _objects;};
 
-	virtual void AddActor(Actor* actor);
-	virtual void RemoveActor(Actor* actor);
+	//virtual void AddActor(Actor* actor);
+	//virtual void RemoveActor(Actor* actor);
 
 	Creature* GetCreatureAt(VectorInt cellPos);
+
+
+	virtual void AddBullet(Bullet* bullet) abstract;
+	virtual void RemoveBullet(Bullet* bullet) abstract;
 	
 protected:
 	vector<Object*> _objects;
+
 
 public:
 

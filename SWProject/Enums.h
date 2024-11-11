@@ -12,6 +12,22 @@ enum class ObjectType
 	None,
 	Unit,
 	Enemy,
+	Bullet,
+	Tile,
+};
+
+enum class ColliderType
+{
+	Sphere,
+	Box,
+};
+
+enum class TileType
+{
+	None,
+	Normal,
+	BulletTile,
+
 };
 
 //enum LAYER_TYPE
@@ -24,6 +40,15 @@ enum class ObjectType
 //
 //	LAYER_MAXCOUNT
 //};
+
+enum COLLISION_LAYER_TYPE
+{
+	CLT_OBJECT,
+	CLT_GROUND,
+	CLT_WALL,
+	//...
+
+};
 
 enum Dir
 {

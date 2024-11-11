@@ -1,61 +1,77 @@
 #include "pch.h"
 #include "Scene.h"
-//#include "TimeManager.h"
-//#include "SceneManager.h"
-//
-//Scene::Scene()
-//{
-//}
-//
-//Scene::~Scene()
-//{
-//}
-//
-//void Scene::Init()
-//{
-//	//{
-//	//	for (const vector<Actor*>& actors : _actors)
-//	//		for (Actor* actor : actors)
-//	//			actor->BeginPlay();
-//
-//
-//	//	for (UI* ui : _uis)
-//	//		ui->BeginPlay();
-//	//}
-//}
-//
-//void Scene::Update()
-//{
-//	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
-//	// 거리 = 시간 * 속도
-//
-//	//GET_SINGLE(CollisionManager)->Update();
-//
-//	// 위험 일단 복사로.
-//	//for (const vector<Actor*> actors : _actors)
-//	//	for (Actor* actor : actors)
-//	//		actor->Tick();
-//
-//	//for (UI* ui : _uis)
-//	//	ui->Tick();
-//}
-//
-//void Scene::Render(HDC hdc)
-//{
-//	vector<Actor*>& actors = _actors[LAYER_OBJECT];
-//	std::sort(actors.begin(), actors.end(), [=](Actor* a, Actor* b)
-//		{
-//			return a->GetPos().y < b->GetPos().y;
-//		});
-//
-//	for (const vector<Actor*>& actors : _actors)
-//		for (Actor* actor : actors)
-//			actor->Render(hdc);
-//
-//	for (UI* ui : _uis)
-//		ui->Render(hdc);
-//}
-//
+#include "TimeManager.h"
+#include "SceneManager.h"
+#include "CollisionManager.h"
+#include "Object.h"
+
+Scene::Scene()
+{
+}
+
+Scene::~Scene()
+{
+}
+
+void Scene::Init()
+{
+	vector<Object*>& objects = _objects; // 일단 참조로 받지만 괜찮을까..?
+
+
+	for (auto& object : _objects)
+		object->Init();
+
+	//{
+	//	for (const vector<Actor*>& actors : _actors)
+	//		for (Actor* actor : actors)
+	//			actor->BeginPlay();
+
+
+	//	for (UI* ui : _uis)
+	//		ui->BeginPlay();
+	//}
+}
+
+void Scene::Update()
+{
+	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
+	// 거리 = 시간 * 속도
+
+	const vector<Object*> objects = _objects; 
+
+	for (Object* object : objects)
+		object->Update();
+
+	GET_SINGLE(CollisionManager)->Update();
+
+	// 위험 일단 복사로.
+	//for (const vector<Actor*> actors : _actors)
+	//	for (Actor* actor : actors)
+	//		actor->Tick();
+
+	//for (UI* ui : _uis)
+	//	ui->Tick();
+}
+
+void Scene::Render(HDC hdc)
+{
+	for (Object* object : _objects)
+		object->Render(hdc);
+
+	//vector<Actor*>& actors = _actors[LAYER_OBJECT];
+	//std::sort(actors.begin(), actors.end(), [=](Actor* a, Actor* b)
+	//	{
+	//		return a->GetPos().y < b->GetPos().y;
+	//	});
+
+	//for (const vector<Actor*>& actors : _actors)
+	//	for (Actor* actor : actors)
+	//		actor->Render(hdc);
+
+	//for (UI* ui : _uis)
+	//	ui->Render(hdc);
+}
+
 //void Scene::AddActor(Actor* actor)
 //{
 //	if (actor == nullptr)

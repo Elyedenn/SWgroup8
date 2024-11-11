@@ -3,6 +3,7 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 #include "SceneManager.h"
+#include "BulletTile.h"
 
 Game::Game()
 {
@@ -35,14 +36,19 @@ void Game::Init(HWND hwnd)
 	//GET_SINGLE(SceneManager)->Init();
 	//GET_SINGLE(ResourceManager)->Init(_hwnd, L"");
 
-	//GET_SINGLE(SceneManager)->ChangeScene(SceneType::DevScene);
+	GET_SINGLE(SceneManager)->ChangeScene(SceneType::DevScene);
+
+	// temp
+	Object* test = Object::CreateObject<BulletTile>();
+	test->SetPos(Pos{ 400,300 });
+	GET_SINGLE(SceneManager)->Add(test);
 }
 
 void Game::Update()
 {
 	GET_SINGLE(TimeManager)->Update();
 	GET_SINGLE(InputManager)->Update();
-	//GET_SINGLE(SceneManager)->Update();
+	GET_SINGLE(SceneManager)->Update();
 }
 
 void Game::Render()

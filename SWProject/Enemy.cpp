@@ -2,7 +2,7 @@
 #include "Enemy.h"
 #include "Object.h"
 
-Enemy::Enemy() : Object(ObjectType::Enemy)
+Enemy::Enemy() : Creature(ObjectType::Enemy)
 {
 }
 

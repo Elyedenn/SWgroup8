@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "SceneManager.h"
 #include "Scene.h"
-//#include "DevScene.h"
+#include "DevScene.h"
 //#include "GameScene.h"
 //#include "EditScene.h"
 
@@ -28,6 +28,7 @@ void SceneManager::Clear()
 	SAFE_DELETE(_scene);
 }
 
+// CollisionManager Clear ÇÊ¿ä
 void SceneManager::ChangeScene(SceneType sceneType)
 {
 	if (sceneType == _sceneType)
@@ -37,9 +38,9 @@ void SceneManager::ChangeScene(SceneType sceneType)
 
 	switch (sceneType)
 	{
-	//case SceneType::DevScene:
-	//	newScene = new DevScene();
-	//	break;
+	case SceneType::DevScene:
+		newScene = new DevScene();
+		break;
 
 	//case SceneType::GameScene:
 	//	newScene = new GameScene();

@@ -52,11 +52,12 @@ public:
 
 	KeyState GetState(KeyType key) { return _states[static_cast<uint8>(key)]; }
 	POINT GetMousePos() { return _mousePos; }
-	
+
 
 private:
 	HWND _hwnd = 0;
-	vector<KeyState>_states;
+	vector<KeyState> _states;
 	POINT _mousePos;
+
 };
 

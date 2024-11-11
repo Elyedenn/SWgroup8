@@ -27,6 +27,18 @@
     <Filter Include="소스 파일\99. Headers\no">
       <UniqueIdentifier>{92bc877f-8d18-44f2-a75b-80a45dc266b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\05. Component">
+      <UniqueIdentifier>{bf913cf6-b503-4e06-81a6-4fe84ecf3e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05. Component\Collider">
+      <UniqueIdentifier>{90292125-80a6-4180-9eb9-59b711c2b9f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04. Resource">
+      <UniqueIdentifier>{6005ddc3-80d8-43d2-9a09-6252788458be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03. Object\Unit">
+      <UniqueIdentifier>{2f07338a-0af8-4db3-bede-8ce339dbbb47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SWProject.h">
@@ -77,11 +89,47 @@
     <ClInclude Include="Object.h">
       <Filter>소스 파일\03. Object</Filter>
     </ClInclude>
-    <ClInclude Include="Unit.h">
-      <Filter>소스 파일\03. Object</Filter>
-    </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>소스 파일\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="DevScene.h">
+      <Filter>소스 파일\02. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\01. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider.h">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereCollider.h">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\01. Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>소스 파일\05. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature.h">
+      <Filter>소스 파일\03. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletTile.h">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalTile.h">
+      <Filter>소스 파일\03. Object\Unit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -112,11 +160,47 @@
     <ClCompile Include="Object.cpp">
       <Filter>소스 파일\03. Object</Filter>
     </ClCompile>
-    <ClCompile Include="Unit.cpp">
-      <Filter>소스 파일\03. Object</Filter>
-    </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="DevScene.cpp">
+      <Filter>소스 파일\02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\01. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxCollider.cpp">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereCollider.cpp">
+      <Filter>소스 파일\05. Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\01. Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>소스 파일\05. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature.cpp">
+      <Filter>소스 파일\03. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletTile.cpp">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일\03. Object\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalTile.cpp">
+      <Filter>소스 파일\03. Object\Unit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
