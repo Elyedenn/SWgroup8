@@ -4,6 +4,7 @@
 
 Enemy::Enemy() : Object(ObjectType::Enemy)
 {
+  //abc
 }
 
 Enemy::~Enemy()
