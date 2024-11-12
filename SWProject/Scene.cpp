@@ -15,11 +15,11 @@ Scene::~Scene()
 
 void Scene::Init()
 {
-	vector<Object*>& objects = _objects; // 일단 참조로 받지만 괜찮을까..?
+	//vector<Object*>& objects = _objects; // 일단 참조로 받지만 괜찮을까..?
 
 
-	for (auto& object : _objects)
-		object->Init();
+	//for (auto& object : _objects)
+	//	object->Init();
 
 	//{
 	//	for (const vector<Actor*>& actors : _actors)
@@ -55,7 +55,9 @@ void Scene::Update()
 
 void Scene::Render(HDC hdc)
 {
-	for (Object* object : _objects)
+	const vector<Object*> objects = _objects;
+
+	for (Object* object : objects)
 		object->Render(hdc);
 
 	//vector<Actor*>& actors = _actors[LAYER_OBJECT];

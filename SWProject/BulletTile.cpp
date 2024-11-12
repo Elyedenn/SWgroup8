@@ -42,5 +42,4 @@ void BulletTile::SpawnBullet()
 
 	bullet->SetPos(_pos);
 	bullet->SetDir(_dir);
-
 }

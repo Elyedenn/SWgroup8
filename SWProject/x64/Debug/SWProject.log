@@ -1,2 +1,8 @@
-﻿  CollisionManager.cpp
-  SWProject.vcxproj -> C:\Users\wlsdn\Desktop\GithubProj\SWgroup8\x64\Debug\SWProject.exe
+﻿  Bullet.cpp
+C:\Users\wlsdn\Desktop\대학\SWProject\SWgroup8\SWProject\Bullet.cpp(33,23): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Bullet.cpp'을(를) 컴파일하는 중)
+  
+C:\Users\wlsdn\Desktop\대학\SWProject\SWgroup8\SWProject\Bullet.cpp(48,31): warning C4244: '인수': 'float'에서 'int32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Bullet.cpp'을(를) 컴파일하는 중)
+  
+  SWProject.vcxproj -> C:\Users\wlsdn\Desktop\대학\SWProject\SWgroup8\x64\Debug\SWProject.exe

@@ -36,19 +36,19 @@ void DevScene::Update()
 {
 	Super::Update();
 
-	// 총알 화면 벗어난 거 확인후 제거
-	for (auto it = _bullets.begin(); it != _bullets.end(); )
-	{
-		Bullet* bullet = *it;
-		Pos pos = bullet->GetPos();
-		if (pos.x < 0 || pos.x > GWinSizeX || pos.y < 0 || pos.y > GWinSizeY)
-		{
-			SAFE_DELETE(bullet);
-			it = _bullets.erase(it);  // 현재 요소를 지운 후, 유효한 다음 요소로 이동
-		}
-		else 
-			++it;  // 범위 내에 있는 경우 다음 요소로 이동
-	}
+	//// 총알 화면 벗어난 거 확인후 제거
+	//for (auto it = _bullets.begin(); it != _bullets.end(); )
+	//{
+	//	Bullet* bullet = *it;
+	//	Pos pos = bullet->GetPos();
+	//	if (pos.x < 0 || pos.x > GWinSizeX || pos.y < 0 || pos.y > GWinSizeY)
+	//	{
+	//		SAFE_DELETE(bullet);
+	//		it = _bullets.erase(it);  // 현재 요소를 지운 후, 유효한 다음 요소로 이동
+	//	}
+	//	else 
+	//		++it;  // 범위 내에 있는 경우 다음 요소로 이동
+	//}
 
 }
 

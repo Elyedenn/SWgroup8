@@ -49,6 +49,9 @@ void CollisionManager::AddCollider(Collider* collider)
 
 void CollisionManager::RemoveCollider(Collider* collider)
 {
+	if (collider == nullptr)
+		return;
+
 	auto it = std::remove(_colliders.begin(), _colliders.end(), collider);
 	_colliders.erase(it, _colliders.end());
 }
