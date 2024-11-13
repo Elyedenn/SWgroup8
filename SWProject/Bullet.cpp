@@ -8,6 +8,7 @@
 
 Bullet::Bullet() : Object(ObjectType::Bullet)
 {
+	//SetStat({1,1,10, 100, 30.0f});
 }
 
 Bullet::~Bullet()
@@ -18,9 +19,10 @@ void Bullet::Init()
 {
 	_collider = new SphereCollider(_radius);
 	_collider->SetOwner(this);
-	_collider->AddCollisionFlagLayer(COLLISION_LAYER_TYPE::CLT_OBJECT);
+	_collider->SetCollisionLayer(CLT_OBJECT);
+	_collider->AddCollisionFlagLayer(CLT_ENEMY);
 
-	GET_SINGLE(SceneManager)->Add(this);
+	//GET_SINGLE(SceneManager)->Add(this);
 	GET_SINGLE(CollisionManager)->AddCollider(_collider);
 }
 
@@ -54,12 +56,8 @@ void Bullet::OnComponentBeginOverlap(Collider* src, Collider* dest)
 {
 	dynamic_cast<Creature*>(dest->GetOwner())->OnDamaged(_damage);
 
-	GET_SINGLE(SceneManager)->Remove(this);
 	GET_SINGLE(CollisionManager)->RemoveCollider(_collider);
-
-	// ±¦ÂúÀ»±î..?
-	delete this;
-	return;
+	GET_SINGLE(SceneManager)->Remove(this);
 }
 
 void Bullet::OnComponentEndOverlap(Collider* src, Collider* dest)

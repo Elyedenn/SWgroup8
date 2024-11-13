@@ -2,8 +2,9 @@
 #include "BulletTile.h"
 #include "Bullet.h"
 #include "TimeManager.h"
+#include "SceneManager.h"
 
-BulletTile::BulletTile() : Tile(TileType::BulletTile)
+BulletTile::BulletTile(int32 tileSize) : Tile(TileType::BulletTile, tileSize)
 {
 }
 

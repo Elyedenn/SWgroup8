@@ -3,8 +3,9 @@
 
 class NormalTile : public Tile
 {
+	using Super = Tile;
 public:
-	NormalTile();
+	NormalTile(int32 tileSize);
 	~NormalTile();
 
 	virtual void Init();

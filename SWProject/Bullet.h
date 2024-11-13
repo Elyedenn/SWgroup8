@@ -21,9 +21,9 @@ public:
 
 
 private:
-	int _damage = 10;
-	int _speed = 100;
-	float _radius = 50.f;
+	int32 _damage = 10;
+	int32 _speed = 300;
+	float _radius = 20.f;
 	SphereCollider* _collider = nullptr;
 };
 

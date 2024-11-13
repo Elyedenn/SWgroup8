@@ -6,7 +6,7 @@ class BulletTile : public Tile
 	using Super = Tile;
 
 public:
-	BulletTile();
+	BulletTile(int32 tileSize);
 	~BulletTile();
 
 	virtual void Init();
@@ -16,7 +16,7 @@ public:
 	void SpawnBullet();
 
 private:
-	float _delay = 3.0;
+	const float _delay = 1.0;
 	float _sumTime = 0;
 };
 

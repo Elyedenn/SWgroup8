@@ -4,6 +4,8 @@
 #include "InputManager.h"
 #include "SceneManager.h"
 #include "BulletTile.h"
+#include "Enemy.h"
+#include "GameManager.h"
 
 Game::Game()
 {
@@ -33,15 +35,20 @@ void Game::Init(HWND hwnd)
 
 	GET_SINGLE(TimeManager)->Init();
 	GET_SINGLE(InputManager)->Init(_hwnd);
-	//GET_SINGLE(SceneManager)->Init();
+	GET_SINGLE(SceneManager)->Init();
+	GET_SINGLE(SceneManager)->ChangeScene(SceneType::DevScene);
+	GET_SINGLE(GameManager)->Init();
 	//GET_SINGLE(ResourceManager)->Init(_hwnd, L"");
 
-	GET_SINGLE(SceneManager)->ChangeScene(SceneType::DevScene);
 
 	// temp
-	Object* test = Object::CreateObject<BulletTile>();
-	test->SetPos(Pos{ 400,300 });
-	GET_SINGLE(SceneManager)->Add(test);
+	BulletTile* BT = new BulletTile(30);
+	BT->SetPos(Pos{ 400,600 });
+	BT->SetDir(DIR_UP);
+	Object* enemy = Object::CreateObject<Enemy>();
+	enemy->SetPos(Pos{ 400,0 });
+	enemy->SetDir(DIR_DOWN);
+	
 }
 
 void Game::Update()
@@ -49,6 +56,7 @@ void Game::Update()
 	GET_SINGLE(TimeManager)->Update();
 	GET_SINGLE(InputManager)->Update();
 	GET_SINGLE(SceneManager)->Update();
+	GET_SINGLE(GameManager)->Update();
 }
 
 void Game::Render()
@@ -57,6 +65,7 @@ void Game::Render()
 	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
 
 	GET_SINGLE(SceneManager)->Render(_hdcBack);
+	GET_SINGLE(GameManager)->Render(_hdcBack);
 
 	{
 		wstring str = std::format(L"FPS({0}), DT({1} ms)", fps, static_cast<int32>(deltaTime * 1000)); // 이게 WCHAR 보다 현대적.

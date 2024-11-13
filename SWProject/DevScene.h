@@ -20,24 +20,17 @@ public:
 	virtual void Remove(Object* object) override;
 	virtual void Clear() override;
 
-	void SetUnitBoard(int y, int x, int value);
-	void SetEnemyBoard(int y, int x, int value);
-	
-	
-	virtual void AddBullet(Bullet* bullet) override;
-	virtual void RemoveBullet(Bullet* bullet) override;
 
+	virtual void GetUnitInfo(int32 unitNum, int32 arr[4][4]) override;
 
 private:
-	int _uX = 10;
-	int _uY = 10;
+	int32 _uX = 10;
+	int32 _uY = 10;
 
-	int _eX = 8;
-	int _eY = 8;
+	int32 _eX = 8;
+	int32 _eY = 8;
 
-	vector<vector<int>> _unitBoard;
-	vector<vector<int>> _enemyBoard;
-
-	vector<Bullet*> _bullets;
+	// temp
+	vector<int32*> _unitInfo;
 };
 

@@ -37,7 +37,7 @@ void Scene::Update()
 	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
 	// 거리 = 시간 * 속도
 
-	const vector<Object*> objects = _objects; 
+	const vector<Object*> objects = _objects;
 
 	for (Object* object : objects)
 		object->Update();

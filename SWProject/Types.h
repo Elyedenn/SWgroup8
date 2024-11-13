@@ -16,6 +16,7 @@ struct Stat
 	int32 maxHp = 0;
 	int32 attack = 0;
 	float speed = 0;
+	float radius = 50.0f;
 };
 
 struct Vector

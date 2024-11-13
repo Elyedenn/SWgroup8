@@ -131,6 +131,9 @@
     <ClInclude Include="NormalTile.h">
       <Filter>소스 파일\03. Object\Unit</Filter>
     </ClInclude>
+    <ClInclude Include="BlockModel.h">
+      <Filter>소스 파일\99. Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SWProject.cpp">

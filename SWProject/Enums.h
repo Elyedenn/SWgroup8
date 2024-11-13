@@ -44,8 +44,8 @@ enum class TileType
 enum COLLISION_LAYER_TYPE
 {
 	CLT_OBJECT,
-	CLT_GROUND,
-	CLT_WALL,
+	CLT_ENEMY,
+	CLT_TILE,
 	//...
 
 };
@@ -58,4 +58,11 @@ enum Dir
 	DIR_RIGHT,
 
 	DIR_MAXCOUNT
+};
+
+enum class EnemyState
+{
+	Move,
+	Attack,
+	Skill,
 };
