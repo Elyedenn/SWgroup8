@@ -68,6 +68,7 @@ void GameManager::NormalUpdate()
 	if (GET_SINGLE(InputManager)->GetButtonDown(KeyType::KEY_1))
 	{
 		_mode = Mode::Build;
+		_unitIndex = 0;
 		GET_SINGLE(SceneManager)->GetCurrentScene()->GetUnitInfo(0, _selectedBlock);
 		SelectStartIndex();
 	}
@@ -106,6 +107,13 @@ void GameManager::BuildUpdate()
 		}
 	}
 
+	if (GET_SINGLE(InputManager)->GetButtonDown(KeyType::Spacebar))
+	{
+		_unitIndex = (_unitIndex + 1) % 4;
+		GET_SINGLE(SceneManager)->GetCurrentScene()->GetUnitInfo(_unitIndex, _selectedBlock);
+		SelectStartIndex();
+	}
+
 	if (GET_SINGLE(InputManager)->GetButtonDown(KeyType::KEY_1))
 	{
 		_mode = Mode::Normal;
@@ -129,7 +137,7 @@ void GameManager::SelectStartIndex()
 		{
 			if (_selectedBlock[i][j] != 0)
 			{
-				_startIndex = { i,j };
+				_startIndex = { j,i };
 				found = true;
 				break;
 			}

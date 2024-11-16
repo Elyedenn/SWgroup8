@@ -37,6 +37,6 @@ public:
 protected:
 	ObjectType _type = ObjectType::None;
 	Pos _pos = {};
-	Dir _dir = DIR_LEFT;
+	Dir _dir = DIR_UP;
 };
 

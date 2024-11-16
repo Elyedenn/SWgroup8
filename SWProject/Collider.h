@@ -47,6 +47,6 @@ public: // 지금 그냥 Get, Set 만들기 귀찮아서 public 임.
 	COLLISION_LAYER_TYPE _collisionLayer = CLT_OBJECT;
 
 	// 누구랑 충돌할 것인가?
-	uint32 _collisionFlag = 0xFFFFFFFF;
+	uint32 _collisionFlag = 0;
 };
 

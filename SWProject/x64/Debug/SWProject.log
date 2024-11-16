@@ -1,2 +1,5 @@
 ﻿  Game.cpp
-  SWProject.vcxproj -> C:\Users\wlsdn\Desktop\GithubProj\SWgroup8\x64\Debug\SWProject.exe
+C:\Users\wlsdn\Desktop\대학\SWProject\SWgroup8\SWProject\Game.cpp(58,20): warning C4267: '초기화 중': 'size_t'에서 'int32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  (소스 파일 '/Game.cpp'을(를) 컴파일하는 중)
+  
+  SWProject.vcxproj -> C:\Users\wlsdn\Desktop\대학\SWProject\SWgroup8\x64\Debug\SWProject.exe

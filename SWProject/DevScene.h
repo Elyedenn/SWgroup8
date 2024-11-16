@@ -32,5 +32,6 @@ private:
 
 	// temp
 	vector<int32*> _unitInfo;
+	float tempTimer = 0;
 };
 

@@ -35,6 +35,15 @@ void BulletTile::Update()
 void BulletTile::Render(HDC hdc)
 {
 	Super::Render(hdc);
+
+	HPEN myPen = ::CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+	HPEN oldPen = (HPEN)::SelectObject(hdc, myPen);
+
+	Utils::DrawCircle(hdc, _pos, _tileSize / 3);
+
+	::SelectObject(hdc, oldPen);
+	::DeleteObject(myPen);
+
 }
 
 void BulletTile::SpawnBullet()

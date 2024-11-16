@@ -28,6 +28,7 @@ private:
 	Mode _mode = Mode::Normal;
 
 	int32 _selectedBlock[4][4] = {};
+	int32 _unitIndex = 0;
 	VectorInt _startIndex = { 0,0 };
 
 	int32 _oneUnitSize = 0;

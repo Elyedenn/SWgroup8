@@ -2,6 +2,8 @@
 #include "DevScene.h"
 #include "Object.h"
 #include "Bullet.h"
+#include "TimeManager.h"
+#include "Enemy.h"
 
 // temp
 int32 TempBlock[][4][4] =
@@ -73,6 +75,21 @@ void DevScene::Update()
 	//		++it;  // 범위 내에 있는 경우 다음 요소로 이동
 	//}
 
+
+	// temp
+	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
+	tempTimer += deltaTime;
+	if(tempTimer >= 5.0f)
+	{
+		// temp
+		//BulletTile* BT = new BulletTile(30);
+		//BT->SetPos(Pos{ 400,500 });
+		//BT->SetDir(DIR_UP);
+		Object* enemy = Object::CreateObject<Enemy>();
+		enemy->SetPos(Pos{ 400,0 });
+		enemy->SetDir(DIR_DOWN);
+		tempTimer = 0;
+	}
 }
 
 void DevScene::Render(HDC hdc)

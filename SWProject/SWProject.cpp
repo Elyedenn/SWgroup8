@@ -108,7 +108,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
 	// 창 바를 크기에 포함 안시키게 조정
-	RECT windowRect = { 0,0,1200,800 };
+	RECT windowRect = { 0,0,800,600 };
 	::AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, false);
 
 	HWND hWnd = ::CreateWindowW(L"SWProject", L"Start", WS_OVERLAPPEDWINDOW,

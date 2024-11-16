@@ -6,6 +6,7 @@
 #include "BulletTile.h"
 #include "Enemy.h"
 #include "GameManager.h"
+#include "Scene.h"
 
 Game::Game()
 {
@@ -39,15 +40,6 @@ void Game::Init(HWND hwnd)
 	GET_SINGLE(SceneManager)->ChangeScene(SceneType::DevScene);
 	GET_SINGLE(GameManager)->Init();
 	//GET_SINGLE(ResourceManager)->Init(_hwnd, L"");
-
-
-	// temp
-	BulletTile* BT = new BulletTile(30);
-	BT->SetPos(Pos{ 400,600 });
-	BT->SetDir(DIR_UP);
-	Object* enemy = Object::CreateObject<Enemy>();
-	enemy->SetPos(Pos{ 400,0 });
-	enemy->SetDir(DIR_DOWN);
 	
 }
 
@@ -63,6 +55,7 @@ void Game::Render()
 {
 	uint32 fps = GET_SINGLE(TimeManager)->GetFps();
 	float deltaTime = GET_SINGLE(TimeManager)->GetDeltaTime();
+	int32 objectsSize = GET_SINGLE(SceneManager)->GetCurrentScene()->GetObjects().size();
 
 	GET_SINGLE(SceneManager)->Render(_hdcBack);
 	GET_SINGLE(GameManager)->Render(_hdcBack);
@@ -70,7 +63,13 @@ void Game::Render()
 	{
 		wstring str = std::format(L"FPS({0}), DT({1} ms)", fps, static_cast<int32>(deltaTime * 1000)); // 이게 WCHAR 보다 현대적.
 
-		Pos pos(650, 10);
+		Pos pos(650, 00);
+		Utils::DrawText(_hdcBack, pos, str);
+	}
+	{
+		wstring str = std::format(L"Objects({0})", objectsSize);
+
+		Pos pos(650, 20);
 		Utils::DrawText(_hdcBack, pos, str);
 	}
 
